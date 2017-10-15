@@ -1,9 +1,13 @@
 {
   "name": "styri-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A colorful and intuitive syntax theme",
-  "keywords": ["styri", "color", "dark"],
+  "keywords": [
+    "styri",
+    "color",
+    "dark"
+  ],
   "repository": "https://github.com/chbk/styri-syntax",
   "license": "Apache-2.0",
   "engines": {
