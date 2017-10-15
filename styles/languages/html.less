@@ -1,0 +1,42 @@
+.syntax--text.syntax--html, .syntax--text.syntax--xml {
+  color: @syntax-color-text;
+
+  // comments
+  .syntax--comment {
+    color: @syntax-color-comment;
+    font-style: italic;
+  }
+
+  // <tag attribute="value">
+  .syntax--tag {
+
+    // .html/xml to skip embedded code
+    .syntax--html, .syntax--xml {
+
+      // tag doctype
+      &.syntax--name, &.syntax--sgml {
+        color: @syntax-color-html-tag;
+      }
+
+      // attribute
+      &.syntax--attribute-name {
+        color: @syntax-color-html-attribute;
+      }
+
+      // value
+      &.syntax--quoted {
+        color: @syntax-color-html-value;
+      }
+    }
+  }
+
+  // <?php ?>
+  .syntax--embedded.syntax--punctuation {
+    color: @syntax-color-punctuation;
+
+    // ?
+    .syntax--source {
+      color: @syntax-color-text !important;
+    }
+  }
+}

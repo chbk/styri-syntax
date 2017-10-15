@@ -1,0 +1,111 @@
+// ------------------ Base colors ------------------
+
+@styri-dark:        hsl(240, 21%, 21%); // Background
+@styri-bright:      hsl(240, 70%, 92%); // Text
+@styri-light:       hsl(240, 72%, 90%); // Punctuation
+@styri-dim:         hsl(240, 18%, 42%); // Comments
+
+@styri-red-1:       hsv(352, 80%, 92%);
+@styri-pink-1:      hsv(315, 87%, 99%);
+@styri-blue-1:      hsv(202, 99%, 98%);
+@styri-green-1:     hsv( 87, 99%, 87%);
+@styri-orange-1:    hsv( 49, 87%, 92%);
+
+@styri-pink-2:      hsv(315, 75%, 99%);
+@styri-blue-2:      hsv(206, 90%, 95%);
+@styri-cyan-2:      hsv(189, 99%, 94%);
+@styri-green-2:     hsv(172, 95%, 90%);
+@styri-orange-2:    hsv( 42, 52%, 98%);
+
+// ------------------ Editor colors ------------------
+
+// General colors
+@syntax-text-color:                         @styri-bright;
+@syntax-cursor-color:                       darken(@styri-bright, 5%);
+@syntax-selection-color:                    hsla(hue(@styri-dark), 90%, 80%, .2);
+@syntax-selection-flash-color:              hsla(hue(@styri-dark), 90%, 80%, .7);
+@syntax-background-color:                   @styri-dark;
+@syntax-cursor-line-color:                  hsla(hue(@styri-dark), 100%, 80%, .04);
+@syntax-bracket-matcher-color:              hsla(hue(@styri-dark), 80%, 81%, .45);
+
+// Guide colors
+@syntax-wrap-guide-color:                   darken(@styri-dim, 9%);
+@syntax-indent-guide-color:                 darken(@styri-dim, 9%);
+@syntax-invisible-character-color:          darken(@styri-dim, 9%);
+
+// Find and replace colors
+@syntax-result-marker-color:                hsla(hue(@styri-dark), 90%, 77%, .32);
+@syntax-result-marker-color-selected:       hsla(hue(@styri-dark), 90%, 78%, .48);
+
+// Gutter colors
+@syntax-gutter-text-color:                  lighten(@styri-dim, 9%);
+@syntax-gutter-text-color-selected:         lighten(saturate(@styri-dim, 9%), 28%);
+@syntax-gutter-border-color:                @styri-bright;
+@syntax-gutter-background-color:            transparent;
+@syntax-gutter-background-color-selected:   transparent;
+@syntax-gutter-cursor-line-color:           hsla(hue(@styri-dark) + 5, 100%, 75%, .06);
+
+// Git colors
+@syntax-color-renamed:              hsv(290, 80%, 95%);
+@syntax-color-added:                hsv(150, 75%, 85%);
+@syntax-color-modified:             hsv(290, 80%, 95%);
+@syntax-color-removed:              hsv(335, 70%, 95%);
+
+// ------------------ Language colors ------------------
+
+@syntax-color-text:                 @styri-bright;
+@syntax-color-comment:              @styri-dim;
+@syntax-color-punctuation:          @styri-light;
+
+@syntax-color-src-keyword:          @styri-green-1;
+@syntax-color-src-operator:         @styri-light;
+@syntax-color-src-variable:         @styri-blue-1;
+@syntax-color-src-string:           @styri-orange-1;
+@syntax-color-src-regexp:           @styri-pink-1;
+@syntax-color-src-numeric:          @styri-pink-1;
+@syntax-color-src-constant:         @styri-pink-1;
+@syntax-color-src-invalid:          @styri-red-1;
+
+@syntax-color-regexp-anchor:        @styri-pink-2;
+@syntax-color-regexp-class:         @styri-pink-2;
+@syntax-color-regexp-group:         @styri-blue-2;
+@syntax-color-regexp-assertion:     @styri-orange-2;
+@syntax-color-regexp-set:           @styri-pink-2;
+@syntax-color-regexp-quantifier:    @styri-green-2;
+
+@syntax-color-gfm-marker:           @styri-pink-2;
+@syntax-color-gfm-link:             @styri-cyan-2;
+@syntax-color-gfm-style:            @styri-green-2;
+@syntax-color-gfm-critic:           @styri-orange-2;
+
+@syntax-color-json-key:             @styri-blue-2;
+@syntax-color-json-value:           @styri-cyan-2;
+@syntax-color-json-numeric:         @styri-green-2;
+@syntax-color-json-constant:        @styri-green-2;
+
+@syntax-color-html-tag:             @styri-blue-2;
+@syntax-color-html-attribute:       @styri-cyan-2;
+@syntax-color-html-value:           @styri-green-2;
+
+@syntax-color-css-at-rule:          @styri-pink-2;
+@syntax-color-css-selector:         @styri-pink-2;
+@syntax-color-css-pseudo-selector:  @styri-green-2;
+@syntax-color-css-property:         @styri-blue-2;
+@syntax-color-css-value:            @styri-cyan-2;
+@syntax-color-css-important:        @styri-green-2;
+@syntax-color-css-variable:         @styri-blue-2;
+
+// ------------------ Exported colors ------------------
+
+@syntax-color-attribute:            @styri-bright;
+@syntax-color-class:                @styri-bright;
+@syntax-color-constant:             @styri-bright;
+@syntax-color-function:             @styri-bright;
+@syntax-color-import:               @styri-bright;
+@syntax-color-keyword:              @styri-bright;
+@syntax-color-method:               @styri-bright;
+@syntax-color-property:             @styri-bright;
+@syntax-color-snippet:              @styri-bright;
+@syntax-color-tag:                  @styri-bright;
+@syntax-color-value:                @styri-bright;
+@syntax-color-variable:             @styri-bright;
