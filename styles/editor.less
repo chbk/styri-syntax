@@ -22,6 +22,11 @@ atom-text-editor {
       color: @syntax-gutter-text-color;
       -webkit-font-smoothing: antialiased;
 
+      &.bracket-matcher {
+        background-color: @syntax-gutter-background-color;
+        color: @syntax-gutter-text-color-selected;
+      }
+
       &.cursor-line {
         background-color: @syntax-gutter-background-color-selected;
         color: @syntax-gutter-text-color-selected;
