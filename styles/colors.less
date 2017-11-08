@@ -1,9 +1,9 @@
 // ------------------ Base colors ------------------
 
-@styri-dark:        hsl(240, 21%, 21%); // Background
-@styri-bright:      hsl(240, 70%, 92%); // Text
-@styri-light:       hsl(240, 72%, 90%); // Punctuation
-@styri-dim:         hsl(240, 18%, 42%); // Comments
+@styri-dark:        hsl(232, 20%, 20.5%); // Background
+@styri-bright:      hsl(232, 70%, 92%);   // Text
+@styri-light:       hsl(232, 72%, 90%);   // Punctuation
+@styri-dim:         hsl(232, 17%, 40%);   // Comments
 
 @styri-red-1:       hsv(352, 80%, 92%);
 @styri-pink-1:      hsv(315, 87%, 99%);
@@ -22,10 +22,10 @@
 // General colors
 @syntax-text-color:                         @styri-bright;
 @syntax-cursor-color:                       darken(@styri-bright, 5%);
-@syntax-selection-color:                    hsla(hue(@styri-dark), 90%, 80%, .2);
-@syntax-selection-flash-color:              hsla(hue(@styri-dark), 90%, 80%, .7);
+@syntax-selection-color:                    hsla(hue(@styri-dark), 80%, 80%, .2);
+@syntax-selection-flash-color:              hsla(hue(@styri-dark), 70%, 80%, .6);
 @syntax-background-color:                   @styri-dark;
-@syntax-cursor-line-color:                  hsla(hue(@styri-dark), 100%, 80%, .04);
+@syntax-cursor-line-color:                  hsla(hue(@styri-dark), 100%, 85%, .04);
 @syntax-bracket-matcher-color:              hsla(hue(@styri-dark), 80%, 81%, .45);
 
 // Guide colors
@@ -34,8 +34,8 @@
 @syntax-invisible-character-color:          darken(@styri-dim, 9%);
 
 // Find and replace colors
-@syntax-result-marker-color:                hsla(hue(@styri-dark), 90%, 77%, .32);
-@syntax-result-marker-color-selected:       hsla(hue(@styri-dark), 90%, 78%, .48);
+@syntax-result-marker-color:                hsla(hue(@styri-dark), 90%, 77%, .27);
+@syntax-result-marker-color-selected:       hsla(hue(@styri-dark), 80%, 77%, .38);
 
 // Gutter colors
 @syntax-gutter-text-color:                  lighten(@styri-dim, 9%);
@@ -43,7 +43,7 @@
 @syntax-gutter-border-color:                @styri-bright;
 @syntax-gutter-background-color:            transparent;
 @syntax-gutter-background-color-selected:   transparent;
-@syntax-gutter-cursor-line-color:           hsla(hue(@styri-dark) + 5, 100%, 75%, .06);
+@syntax-gutter-cursor-line-color:           hsla(hue(@styri-dark), 99%, 83%, .063);
 
 // Git colors
 @syntax-color-renamed:              hsv(290, 80%, 95%);
