@@ -47,8 +47,8 @@
       color: @syntax-color-punctuation;
     }
 
-    // :nth-child(1)
-    .syntax--numeric {
+    // :nth-child(even)
+    .syntax--constant {
       color: @syntax-color-css-pseudo-selector;
     }
   }
@@ -82,8 +82,8 @@
     color: @syntax-color-css-value;
   }
 
-  // "stylesheet.css" 12 url('link')
-  .syntax--quoted, .syntax--numeric, .syntax--function {
+  // "stylesheet.css" #fafafa url('link')
+  .syntax--quoted, .syntax--constant, .syntax--function {
     color: @syntax-color-css-value;
   }
 
