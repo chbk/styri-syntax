@@ -12,9 +12,13 @@
     font-style: italic;
   }
 
-  // - * 1. ``` > #
+  // ```
+  .syntax--code>.syntax--support {
+    color: @syntax-color-gfm-code;
+  }
+
+  // - * 1. > #
   .syntax--list,
-  .syntax--code>.syntax--support,
   .syntax--quote .syntax--support,
   .syntax--heading .syntax--marker {
     color: @syntax-color-gfm-marker;
