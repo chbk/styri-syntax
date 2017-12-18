@@ -112,6 +112,15 @@
     }
   }
 
+  // [ruby] abort exit open print puts
+  .syntax--kernel.syntax--ruby {
+    color: @syntax-color-src-keyword;
+
+    &.syntax--arrow {
+      color: @syntax-color-src-operator;
+    }
+  }
+
   // this super
   .syntax--language {
     color: @syntax-color-src-keyword;
@@ -144,6 +153,11 @@
       &.syntax--wildcard {
         color: @syntax-color-src-operator;
       }
+    }
+
+    // [ruby] & *
+    &.syntax--type.syntax--ruby {
+      color: @syntax-color-src-operator;
     }
 
     // [java] path in import path
