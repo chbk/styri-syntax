@@ -43,9 +43,24 @@
     }
   }
 
+  // [ruby] :symbol
+  .syntax--symbol.syntax--ruby {
+    color: @syntax-color-src-symbol;
+  }
+
   // {} () ;
   .syntax--punctuation:not(.syntax--string):not(.syntax--comment) {
     color: @syntax-color-punctuation;
+
+    // [ruby] :''
+    &.syntax--symbol.syntax--ruby {
+      color: @syntax-color-src-symbol;
+    }
+
+    // [ruby] :
+    &.syntax--constant.syntax--ruby:not(.syntax--hashkey) {
+        color: @syntax-color-src-symbol;
+    }
   }
 
   // [js] , . ()
