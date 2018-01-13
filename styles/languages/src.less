@@ -1,6 +1,48 @@
 .syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp) {
   color: @syntax-color-src-variable;
 
+  // regexp
+  .syntax--regexp {
+    color: @syntax-color-src-regexp;
+
+    // [python] r'
+    .syntax--storage.syntax--type {
+      color: @syntax-color-src-regexp;
+    }
+
+    // [ruby] /
+    .syntax--punctuation.syntax--section {
+      color: @syntax-color-src-regexp;
+    }
+
+    // /
+    .syntax--punctuation.syntax--string.syntax--string {
+      color: @syntax-color-src-regexp;
+    }
+
+    // [ruby] #{}
+    .syntax--punctuation.syntax--section.syntax--embedded {
+      color: @syntax-color-punctuation;
+    }
+
+    // [] () - (?=) (?<=) (?!) (?<!) * | ?P<> \1 ^ $ (?i)
+    .syntax--punctuation.syntax--character-class,
+    .syntax--punctuation.syntax--group,
+    .syntax--punctuation.syntax--parenthesis,
+    .syntax--punctuation.syntax--range,
+    .syntax--look-ahead,
+    .syntax--look-behind,
+    .syntax--negative-look-ahead,
+    .syntax--negative-look-behind,
+    .syntax--keyword.syntax--keyword,
+    .syntax--tag,
+    .syntax--begin,
+    .syntax--end,
+    .syntax--flag {
+      color: @syntax-color-src-highlight;
+    }
+  }
+
   // comments
   .syntax--comment, .syntax--docstring {
     color: @syntax-color-comment;
@@ -11,35 +53,46 @@
     }
   }
 
-  // regexp
-  .syntax--regexp {
-    color: @syntax-color-src-regexp;
-
-    * {
-      color: @syntax-color-src-regexp !important;
-    }
-  }
-
-  // strings
-  .syntax--quoted:not(.syntax--docstring) {
+  // strings, heredocs
+  .syntax--quoted:not(.syntax--docstring):not(.syntax--regexp), .syntax--unquoted {
     color: @syntax-color-src-string;
 
-    // exclude embedded code
-    >*:not(.syntax--embedded) {
+    >* {
       color: @syntax-color-src-string;
 
-      * {
+      // \n, embedded sql, [python] :02d
+      .syntax--escape, .syntax--sql.syntax--sql, .syntax--format {
         color: @syntax-color-src-string;
       }
     }
 
-    // interpolated variables
-    .syntax--variable {
+    // interpolated variables, not this super self, embedded code, not sql
+    .syntax--variable:not(.syntax--language), .syntax--embedded:not(.syntax--sql) {
       color: @syntax-color-src-variable;
 
+      // {}
       &.syntax--punctuation {
         color: @syntax-color-punctuation;
       }
+    }
+  }
+
+  // [python] f''
+  .syntax--fstring {
+
+    // [python] \n
+    .syntax--escape {
+      color: @syntax-color-src-string;
+    }
+
+    // [python] :02d
+    .syntax--format {
+      color: @syntax-color-src-format;
+    }
+
+    // [python] {}
+    .syntax--placeholder {
+      color: @syntax-color-punctuation;
     }
   }
 
@@ -48,9 +101,14 @@
     color: @syntax-color-src-symbol;
   }
 
-  // {} () ;
-  .syntax--punctuation:not(.syntax--string):not(.syntax--comment) {
+  // {} ()
+  .syntax--punctuation {
     color: @syntax-color-punctuation;
+
+    // '' "" <<
+    &.syntax--string, &.syntax--heredoc {
+      color: @syntax-color-src-string;
+    }
 
     // [ruby] :''
     &.syntax--symbol.syntax--ruby {
@@ -174,7 +232,7 @@
   }
 
   // 2 0x7 10e-3
-  .syntax--constant.syntax--numeric {
+  .syntax--constant.syntax--numeric:not(.syntax--regexp) {
     color: @syntax-color-src-numeric;
 
     // decimal periods
