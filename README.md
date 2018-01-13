@@ -1,7 +1,5 @@
 # Styri
 
-A colorful and intuitive syntax theme.
-
 ![](https://raw.githubusercontent.com/chbk/styri-syntax/images/simple.js.png?raw=true)
 
 ![](https://raw.githubusercontent.com/chbk/styri-syntax/images/clear.md.png?raw=true)
