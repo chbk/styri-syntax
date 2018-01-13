@@ -1,17 +1,18 @@
 // ------------------ Base colors ------------------
 
-@styri-dark:        hsl(232, 20%, 20.5%); // Background
-@styri-bright:      hsl(232, 70%, 92%);   // Text
-@styri-light:       hsl(232, 72%, 90%);   // Punctuation
-@styri-dim:         hsl(232, 17%, 40%);   // Comments
+@styri-bg:          hsl(232, 20%, 21%); // Background
+@styri-mono-1:      hsl(232, 70%, 92%); // Text
+@styri-mono-2:      hsl(232, 70%, 89%); // Punctuation
+@styri-mono-3:      hsl(232, 19%, 40%); // Comments
 
-@styri-red-1:       hsv(352, 80%, 92%);
+@styri-red-1:       hsv(360, 80%, 99%);
 @styri-pink-1:      hsv(315, 87%, 99%);
 @styri-blue-1:      hsv(202, 99%, 98%);
 @styri-green-1:     hsv( 87, 99%, 87%);
 @styri-orange-1:    hsv( 49, 87%, 92%);
 @styri-amber-1:     hsv( 19, 66%, 95%);
 
+@styri-red-2:       hsv(356, 70%, 99%);
 @styri-pink-2:      hsv(315, 75%, 99%);
 @styri-blue-2:      hsv(206, 90%, 95%);
 @styri-cyan-2:      hsv(189, 99%, 94%);
@@ -22,30 +23,30 @@
 // ------------------ Editor colors ------------------
 
 // General colors
-@syntax-text-color:                         @styri-bright;
-@syntax-cursor-color:                       darken(@styri-bright, 5%);
-@syntax-selection-color:                    hsla(hue(@styri-dark), 80%, 80%, .2);
-@syntax-selection-flash-color:              hsla(hue(@styri-dark), 70%, 80%, .6);
-@syntax-background-color:                   @styri-dark;
-@syntax-cursor-line-color:                  hsla(hue(@styri-dark), 100%, 85%, .04);
-@syntax-bracket-matcher-color:              hsla(hue(@styri-dark), 80%, 81%, .45);
+@syntax-text-color:                         @styri-mono-1;
+@syntax-cursor-color:                       darken(@styri-mono-1, 5%);
+@syntax-selection-color:                    hsla(hue(@styri-bg), 80%, 80%, .2);
+@syntax-selection-flash-color:              hsla(hue(@styri-bg), 70%, 80%, .6);
+@syntax-background-color:                   @styri-bg;
+@syntax-cursor-line-color:                  hsla(hue(@styri-bg), 100%, 85%, .04);
+@syntax-bracket-matcher-color:              hsla(hue(@styri-bg), 80%, 81%, .45);
 
 // Guide colors
-@syntax-wrap-guide-color:                   darken(@styri-dim, 9%);
-@syntax-indent-guide-color:                 darken(@styri-dim, 9%);
-@syntax-invisible-character-color:          darken(@styri-dim, 9%);
+@syntax-wrap-guide-color:                   darken(@styri-mono-3, 9%);
+@syntax-indent-guide-color:                 darken(@styri-mono-3, 9%);
+@syntax-invisible-character-color:          darken(@styri-mono-3, 9%);
 
 // Find and replace colors
-@syntax-result-marker-color:                hsla(hue(@styri-dark), 90%, 77%, .27);
-@syntax-result-marker-color-selected:       hsla(hue(@styri-dark), 80%, 77%, .38);
+@syntax-result-marker-color:                hsla(hue(@styri-bg), 90%, 77%, .27);
+@syntax-result-marker-color-selected:       hsla(hue(@styri-bg), 80%, 77%, .38);
 
 // Gutter colors
-@syntax-gutter-text-color:                  lighten(@styri-dim, 9%);
-@syntax-gutter-text-color-selected:         lighten(saturate(@styri-dim, 12%), 32%);
-@syntax-gutter-border-color:                @styri-bright;
+@syntax-gutter-text-color:                  lighten(@styri-mono-3, 9%);
+@syntax-gutter-text-color-selected:         lighten(saturate(@styri-mono-3, 12%), 32%);
+@syntax-gutter-border-color:                @styri-mono-1;
 @syntax-gutter-background-color:            transparent;
 @syntax-gutter-background-color-selected:   transparent;
-@syntax-gutter-cursor-line-color:           hsla(hue(@styri-dark), 99%, 83%, .063);
+@syntax-gutter-cursor-line-color:           hsla(hue(@styri-bg), 99%, 83%, .063);
 
 // Git colors
 @syntax-color-renamed:              hsv(290, 80%, 95%);
@@ -55,12 +56,12 @@
 
 // ------------------ Language colors ------------------
 
-@syntax-color-text:                 @styri-bright;
-@syntax-color-comment:              @styri-dim;
-@syntax-color-punctuation:          @styri-light;
+@syntax-color-text:                 @styri-mono-1;
+@syntax-color-comment:              @styri-mono-3;
+@syntax-color-punctuation:          @styri-mono-2;
 
 @syntax-color-src-keyword:          @styri-green-1;
-@syntax-color-src-operator:         @styri-light;
+@syntax-color-src-operator:         @styri-mono-2;
 @syntax-color-src-variable:         @styri-blue-1;
 @syntax-color-src-string:           @styri-orange-1;
 @syntax-color-src-symbol:           @styri-orange-1;
@@ -79,7 +80,7 @@
 @syntax-color-regexp-quantifier:    @styri-green-2;
 
 @syntax-color-gfm-marker:           @styri-pink-2;
-@syntax-color-gfm-code:             @styri-dim;
+@syntax-color-gfm-code:             @styri-mono-3;
 @syntax-color-gfm-link:             @styri-cyan-2;
 @syntax-color-gfm-style:            @styri-green-2;
 @syntax-color-gfm-critic:           @styri-orange-2;
@@ -103,15 +104,15 @@
 
 // ------------------ Exported colors ------------------
 
-@syntax-color-attribute:            @styri-bright;
-@syntax-color-class:                @styri-bright;
-@syntax-color-constant:             @styri-bright;
-@syntax-color-function:             @styri-bright;
-@syntax-color-import:               @styri-bright;
-@syntax-color-keyword:              @styri-bright;
-@syntax-color-method:               @styri-bright;
-@syntax-color-property:             @styri-bright;
-@syntax-color-snippet:              @styri-bright;
-@syntax-color-tag:                  @styri-bright;
-@syntax-color-value:                @styri-bright;
-@syntax-color-variable:             @styri-bright;
+@syntax-color-attribute:            @styri-mono-1;
+@syntax-color-class:                @styri-mono-1;
+@syntax-color-constant:             @styri-mono-1;
+@syntax-color-function:             @styri-mono-1;
+@syntax-color-import:               @styri-mono-1;
+@syntax-color-keyword:              @styri-mono-1;
+@syntax-color-method:               @styri-mono-1;
+@syntax-color-property:             @styri-mono-1;
+@syntax-color-snippet:              @styri-mono-1;
+@syntax-color-tag:                  @styri-mono-1;
+@syntax-color-value:                @styri-mono-1;
+@syntax-color-variable:             @styri-mono-1;
