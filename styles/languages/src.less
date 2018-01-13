@@ -191,6 +191,11 @@
     // true false undefined null
     &.syntax--constant {
       color: @syntax-color-src-constant;
+
+      // [perl] __FILE__ module warnings
+      &.syntax--perl {
+        color: @syntax-color-src-variable;
+      }
     }
 
     // *
