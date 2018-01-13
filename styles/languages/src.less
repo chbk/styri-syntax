@@ -258,7 +258,7 @@
   }
 }
 
-.syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp) {
+.syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml) {
 
   &:not(.syntax--embedded) {
     .src(@syntax-color-src-keyword, @syntax-color-src-operator, @syntax-color-src-variable, @syntax-color-src-string, @syntax-color-src-symbol, @syntax-color-src-regexp, @syntax-color-src-highlight, @syntax-color-src-numeric, @syntax-color-src-constant, @syntax-color-src-format, @syntax-color-src-invalid);
@@ -267,7 +267,7 @@
 
 .syntax--text.syntax--html, .syntax--source.syntax--gfm {
 
-  .syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp) {
+  .syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml) {
 
     &.syntax--embedded {
       .src(@syntax-color-emb-keyword, @syntax-color-emb-operator, @syntax-color-emb-variable, @syntax-color-emb-string, @syntax-color-emb-symbol, @syntax-color-emb-regexp, @syntax-color-emb-highlight, @syntax-color-emb-numeric, @syntax-color-emb-constant, @syntax-color-emb-format, @syntax-color-emb-invalid);
