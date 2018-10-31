@@ -1,4 +1,18 @@
-.src(@syntax-color-src-keyword, @syntax-color-src-operator, @syntax-color-src-variable, @syntax-color-src-string, @syntax-color-src-symbol, @syntax-color-src-regexp, @syntax-color-src-highlight, @syntax-color-src-numeric, @syntax-color-src-constant, @syntax-color-src-format, @syntax-color-src-invalid) {
+.src(@syntax-color-src-comment,
+     @syntax-color-src-punctuation,
+     @syntax-color-src-operator,
+     @syntax-color-src-keyword,
+     @syntax-color-src-language,
+     @syntax-color-src-variable,
+     @syntax-color-src-string,
+     @syntax-color-src-symbol,
+     @syntax-color-src-regexp,
+     @syntax-color-src-special,
+     @syntax-color-src-placeholder,
+     @syntax-color-src-format,
+     @syntax-color-src-numeric,
+     @syntax-color-src-constant,
+     @syntax-color-src-invalid) {
 
   color: @syntax-color-src-variable;
 
@@ -23,7 +37,7 @@
 
     // [ruby] #{}
     .syntax--punctuation.syntax--section.syntax--embedded {
-      color: @syntax-color-punctuation;
+      color: @syntax-color-src-punctuation;
     }
 
     // [] () - (?=) (?<=) (?!) (?<!) * | ?P<> \1 ^ $ (?i)
@@ -40,17 +54,17 @@
     .syntax--begin,
     .syntax--end,
     .syntax--flag {
-      color: @syntax-color-src-highlight;
+      color: @syntax-color-src-special;
     }
   }
 
   // comments
   .syntax--comment, .syntax--docstring {
-    color: @syntax-color-comment;
+    color: @syntax-color-src-comment;
     font-style: italic;
 
     * {
-      color: @syntax-color-comment !important;
+      color: @syntax-color-src-comment !important;
     }
   }
 
@@ -73,7 +87,7 @@
 
       // {}
       &.syntax--punctuation {
-        color: @syntax-color-punctuation;
+        color: @syntax-color-src-punctuation;
       }
     }
   }
@@ -93,7 +107,7 @@
 
     // [python] {}
     .syntax--placeholder {
-      color: @syntax-color-punctuation;
+      color: @syntax-color-src-punctuation;
     }
   }
 
@@ -104,7 +118,7 @@
 
   // {} ()
   .syntax--punctuation {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-src-punctuation;
 
     // '' "" <<
     &.syntax--string, &.syntax--heredoc {
@@ -124,7 +138,7 @@
 
   // [js] , . ()
   .syntax--delimiter, .syntax--brace {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-src-punctuation;
   }
 
   // try catch return do
@@ -187,7 +201,7 @@
 
   // this super
   .syntax--language {
-    color: @syntax-color-src-keyword;
+    color: @syntax-color-src-language;
 
     // [python] param in function(param), not self
     &.syntax--parameter:not(.syntax--special) {
@@ -264,7 +278,7 @@
 
   // [c, make] \
   .syntax--line-continuation, .syntax--continuation {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-src-punctuation;
   }
 
   // invalid
@@ -273,19 +287,46 @@
   }
 }
 
-.syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml) {
+.syntax--source {
 
-  &:not(.syntax--embedded) {
-    .src(@syntax-color-src-keyword, @syntax-color-src-operator, @syntax-color-src-variable, @syntax-color-src-string, @syntax-color-src-symbol, @syntax-color-src-regexp, @syntax-color-src-highlight, @syntax-color-src-numeric, @syntax-color-src-constant, @syntax-color-src-format, @syntax-color-src-invalid);
+  &:not(.syntax--css):not(.syntax--gfm):not(.syntax--html):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml),
+  &.syntax--embedded.syntax--html:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml) {
+    .src(@syntax-color-src-comment,
+         @syntax-color-src-punctuation,
+         @syntax-color-src-operator,
+         @syntax-color-src-keyword,
+         @syntax-color-src-language,
+         @syntax-color-src-variable,
+         @syntax-color-src-string,
+         @syntax-color-src-symbol,
+         @syntax-color-src-regexp,
+         @syntax-color-src-special,
+         @syntax-color-src-placeholder,
+         @syntax-color-src-format,
+         @syntax-color-src-numeric,
+         @syntax-color-src-constant,
+         @syntax-color-src-invalid);
   }
 }
 
-.syntax--text.syntax--html, .syntax--source.syntax--gfm {
+.syntax--text.syntax--html {
 
-  .syntax--source:not(.syntax--css):not(.syntax--gfm):not(.syntax--json):not(.syntax--regexp):not(.syntax--yaml) {
-
-    &.syntax--embedded {
-      .src(@syntax-color-emb-keyword, @syntax-color-emb-operator, @syntax-color-emb-variable, @syntax-color-emb-string, @syntax-color-emb-symbol, @syntax-color-emb-regexp, @syntax-color-emb-highlight, @syntax-color-emb-numeric, @syntax-color-emb-constant, @syntax-color-emb-format, @syntax-color-emb-invalid);
-    }
+  // jinja angular mustache
+  .syntax--scope.syntax--jinja, .syntax--template {
+    .src(@syntax-color-template-comment,
+         @syntax-color-template-punctuation,
+         @syntax-color-template-operator,
+         @syntax-color-template-keyword,
+         @syntax-color-template-language,
+         @syntax-color-template-variable,
+         @syntax-color-template-string,
+         @syntax-color-template-symbol,
+         @syntax-color-template-regexp,
+         @syntax-color-template-special,
+         @syntax-color-template-placeholder,
+         @syntax-color-template-format,
+         @syntax-color-template-numeric,
+         @syntax-color-template-constant,
+         @syntax-color-template-invalid);
   }
 }

@@ -1,9 +1,9 @@
 .syntax--text.syntax--html, .syntax--text.syntax--xml {
-  color: @syntax-color-text;
+  color: @syntax-color-html-text;
 
   // comments
   .syntax--comment {
-    color: @syntax-color-comment;
+    color: @syntax-color-html-comment;
     font-style: italic;
   }
 
@@ -15,7 +15,7 @@
 
       // tag doctype
       &.syntax--name, &.syntax--sgml {
-        color: @syntax-color-html-tag;
+        color: @syntax-color-html-tag-name;
       }
 
       // attribute
@@ -32,11 +32,11 @@
 
   // <?php ?>
   .syntax--embedded.syntax--punctuation {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-html-punctuation;
 
     // ?
     .syntax--source {
-      color: @syntax-color-text !important;
+      color: @syntax-color-html-text !important;
     }
   }
 }

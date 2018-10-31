@@ -3,23 +3,23 @@
 
   // comments
   .syntax--comment {
-    color: @syntax-color-comment;
+    color: @syntax-color-css-comment;
     font-style: italic;
   }
 
   // : ; (), not "", not /*, not #
   .syntax--punctuation:not(.syntax--string):not(.syntax--comment):not(.syntax--constant) {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-css-punctuation;
   }
 
   // [less] ()
   .syntax--brace {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-css-punctuation;
   }
 
   // + > ~
   .syntax--operator {
-    color: @syntax-color-punctuation;
+    color: @syntax-color-css-punctuation;
 
     // and not
     &.syntax--logical, &.syntax--control {
@@ -44,7 +44,7 @@
 
     // *
     .syntax--wildcard {
-      color: @syntax-color-punctuation;
+      color: @syntax-color-css-punctuation;
     }
 
     // :nth-child(even)

@@ -1,9 +1,9 @@
 .syntax--source.syntax--gfm {
-  color: @syntax-color-text;
+  color: @syntax-color-gfm-text;
 
   // comments, not quotes or critics, document header
   .syntax--comment:not(.syntax--quote):not(.syntax--critic), .syntax--front-matter {
-    color: @syntax-color-comment;
+    color: @syntax-color-gfm-comment;
     font-style: italic;
   }
 
@@ -45,12 +45,12 @@
 
     // link
     .syntax--entity {
-      color: @syntax-color-text;
+      color: @syntax-color-gfm-text;
     }
   }
 
   // table borders
   .syntax--border {
-    color: @syntax-color-comment;
+    color: @syntax-color-gfm-comment;
   }
 }
