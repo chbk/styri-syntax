@@ -75,9 +75,14 @@
     >* {
       color: @syntax-color-src-string;
 
-      // \n, embedded sql, [python] :02d
-      .syntax--escape, .syntax--sql.syntax--sql, .syntax--format {
+      // \n, embedded sql
+      .syntax--escape, .syntax--sql.syntax--sql {
         color: @syntax-color-src-string;
+      }
+
+      // [python] {variable!s}  %(number)03d
+      .syntax--placeholder, .syntax--format {
+        color: @syntax-color-src-placeholder;
       }
     }
 
